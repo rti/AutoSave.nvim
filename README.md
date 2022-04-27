@@ -137,6 +137,7 @@ conditions = {
 	modifiable = true,
 },
 write_all_buffers = false,
+write_bang = false,
 on_off_commands = false,
 clean_command_line_interval = 0,
 debounce_delay = 135
@@ -163,6 +164,7 @@ autosave.setup(
             modifiable = true
         },
         write_all_buffers = false,
+        write_bang = false,
         on_off_commands = true,
         clean_command_line_interval = 0,
         debounce_delay = 135
@@ -193,6 +195,7 @@ autosave.setup(
             modifiable = true
         },
         write_all_buffers = false,
+        write_bang = false,
         on_off_commands = true,
         clean_command_line_interval = 0,
         debounce_delay = 135
@@ -234,6 +237,7 @@ Although settings already have self-explanatory names, here is where you can fin
 + `execution_message`: (String) message to be displayed when saving [a] file[s].
 + `events`: (Table): events that will trigger the plugin.
 + `write_all_buffers`: (Boolean) if true, writes to all modifiable buffers that meet the `conditions`.
++ `write_bang`: (Boolean) if true, uses :write! or :wall! to write buffers.
 + `on_off_commands`: (Boolean) if true, enables extra commands for toggling the plugin on and off (`:ASOn` and `:ASOff`).
 + `clean_command_line_interval` (Integer) if greater than 0, cleans the command line after *x* amount of milliseconds after printing the `execution_message`.
 + `debounce_delay` (Integer) if greater than 0, saves the file at most every `debounce_delay` milliseconds, vastly improving editing performance. If 0 then saves are performed immediately after `events` occur. It's recommend to leave the default value (`135`), which is just long enough to reduce unnecessary saves, but short enough that you don't notice the delay.

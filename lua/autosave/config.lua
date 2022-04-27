@@ -11,6 +11,7 @@ config.options = {
 		modifiable = true,
 	},
     write_all_buffers = false,
+    write_bang = false,
     on_off_commands = false,
     clean_command_line_interval = 0,
     debounce_delay = 135

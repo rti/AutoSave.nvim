@@ -35,10 +35,18 @@ local function actual_save()
 		local first_char_pos = fn.getpos("'[")
 		local last_char_pos = fn.getpos("']")
 
-		if opts["write_all_buffers"] then
-			cmd("silent! wall")
+		if opts["write_bang"] then
+			if opts["write_all_buffers"] then
+				cmd("silent! wall!")
+			else
+				cmd("silent! write!")
+			end
 		else
-			cmd("silent! write")
+			if opts["write_all_buffers"] then
+				cmd("silent! wall")
+			else
+				cmd("silent! write")
+			end
 		end
 
 		fn.setpos("'[", first_char_pos)
